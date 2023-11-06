@@ -1,0 +1,24 @@
+# Compiled source #
+###################
+./input/drug-classifier/drug_CNN/*
+*.ipynb_checkpoints
+*__pycache__*
+
+# Logs and databases #
+######################
+*.xlsx
+*.path
+*.csv
+*.jpg
+*.png
+*.txt
+*.path
+*.pth
+*.zip
+*.pkl
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
