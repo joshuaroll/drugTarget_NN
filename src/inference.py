@@ -2,6 +2,7 @@ import models
 import torch
 import numpy as np
 import pandas as pd
+import torch.nn as nn
 import matplotlib.pyplot as plt
 from dataset import ImageDataset
 from torch.utils.data import DataLoader
@@ -40,7 +41,7 @@ predicted_labels = []
 losses = []
 
 # Define the loss function
-loss_function = torch.nn.BCEWithLogitsLoss()
+loss_function = models.focal_binary_cross_entropy #nn.BCELoss()
 
 for counter, data in enumerate(test_loader):
     image, target = data['image'].to(device), data['label'].to(device)
@@ -78,8 +79,8 @@ for counter, data in enumerate(test_loader):
     
     image = image.squeeze(0).detach().cpu().numpy()
     image = np.transpose(image, (1, 2, 0))
-    
-    #print(outputs)
+    print(outputs)
+    print(genres[np.argmax(outputs)], genres[target_indices])
     plt.imshow(image)
     plt.axis('off')
     plt.title(f"PREDICTED: {string_predicted}\nACTUAL: {string_actual}")

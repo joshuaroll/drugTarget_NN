@@ -37,7 +37,6 @@ class ImageDataset(Dataset):
                 transforms.ToTensor(),
             ])
         # set the test data images and labels, only last 10 images
-        # this, we will use in a separate inference script
         elif self.test == True and self.train == False:
             self.image_names = list(self.all_image_names[-10:])
             self.labels = list(self.all_labels[-10:])

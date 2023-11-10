@@ -22,7 +22,7 @@ lr = 0.0001
 epochs = 20
 batch_size = 32
 optimizer = optim.Adam(model.parameters(), lr=lr)
-criterion = nn.BCELoss()
+criterion = models.focal_binary_cross_entropy#() # nn.BCELoss()
 
 # read the training csv file
 train_csv_original = pd.read_csv('../input/drug-classifier/drug_CNN/train_drugidx.csv')
