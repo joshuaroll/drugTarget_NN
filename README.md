@@ -1,2 +1,2 @@
-# drugTarget_NN
-Multi-label classification neural network with focal loss.
+# drugTarget_NN: Multi-label classification neural network with focal loss.
+This project focuses on applying deep learning techniques for drug-target classification using a custom implementation of Focal Binary Cross Entropy Loss and a modified ResNet50 neural network. The model predicts biological target categories from drug image data while addressing class imbalance issues through the focal loss function. Additionally, UMAP is used for high-dimensional data visualization of the learned image embeddings.
